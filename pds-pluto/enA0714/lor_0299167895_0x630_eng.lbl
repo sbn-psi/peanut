@@ -1,0 +1,850 @@
+PDS_VERSION_ID       = PDS3                                                   
+                                                                              
+RECORD_TYPE          = FIXED_LENGTH                                           
+RECORD_BYTES         = 2880                                                   
+FILE_RECORDS         = 749                                                    
+                                                                              
+^HEADER = "LOR_0299167895_0X630_ENG.FIT"                                      
+^IMAGE = ("LOR_0299167895_0X630_ENG.FIT", 10)                                 
+^EXTENSION_HISTOGRAM_HEADER = ("LOR_0299167895_0X630_ENG.FIT", 742)           
+^EXTENSION_HISTOGRAM_IMAGE = ("LOR_0299167895_0X630_ENG.FIT", 743)            
+^EXTENSION_ENCODED_FIRST34_HEADER = ("LOR_0299167895_0X630_ENG.FIT", 744)     
+^EXTENSION_ENCODED_FIRST34_IMAGE = ("LOR_0299167895_0X630_ENG.FIT", 745)      
+^EXTENSION_IMAGE_DESCRIPTOR_HEADER = ("LOR_0299167895_0X630_ENG.FIT", 746)    
+^EXTENSION_IMAGE_DESCRIPTOR_IMAGE = ("LOR_0299167895_0X630_ENG.FIT", 747)     
+^EXTENSION_WINDOW_MISMATCHES_HEADER = ("LOR_0299167895_0X630_ENG.FIT", 748)   
+^EXTENSION_WINDOW_MISMATCHES_TABLE = ("LOR_0299167895_0X630_ENG.FIT", 749)    
+NOTE = "                                                                      
+                                                                              
+                                                                              
+- Earth Mean Equator and Vernal Equinox of J2000 is the inertial              
+  reference frame used to specify observational geometry. Geometric           
+  parameters are based on best available data at time of product              
+  creation. Refer to the SPICE archive for the most current                   
+  observational geometry data.                                                
+                                                                              
+- All positions are relative to body centers                                  
+                                                                              
+                                                                              
+- SC_TARGET_POSITION_VECTOR/_VELOCITY_VECTOR                                  
+  - TARGET wrt S/C                                                            
+  - Light time and stellar aberration correction                              
+    (per the PDS Data Dictionary)                                             
+    for light originating from Sun, reflected                                 
+    off of PLUTO                                                              
+    and received by S/C at observation midpoint.                              
+                                                                              
+- TARGET_SUN_POSITION_VECTOR/_VELOCITY_VECTOR                                 
+  - SUN wrt TARGET                                                            
+  - Light time and stellar aberration correction                              
+    (per the PDS Data Dictionary)                                             
+    for light originating from Sun, reflected                                 
+    off of SUN                                                                
+    and received by S/C at observation midpoint.                              
+                                                                              
+- SC_SUN_POSITION_VECTOR/_VELOCITY_VECTOR                                     
+  - SUN wrt S/C                                                               
+  - Light time and stellar aberration correction                              
+    (per the PDS Data Dictionary)                                             
+    for light originating from Sun                                            
+    and received by S/C at observation midpoint.                              
+                                                                              
+- SC_EARTH_POSITION_VECTOR                                                    
+  - EARTH wrt S/C                                                             
+  - Light time and no stellar aberration correction                           
+    (per the PDS Data Dictionary)                                             
+    for light reflected off of, or radiated signal originating from, Earth    
+    and received by S/C at observation midpoint.                              
+                                                                              
+- PHASE_ANGLE                                                                 
+  - Angle between two vectors:                                                
+    - PLUTO target body center to Sun                                         
+    - PLUTO target body center to NH spacecraft                               
+    - Light time and stellar aberration corrections for light leaving         
+      Sun and arriving at target center, for light that arrives at            
+      spacecraft at observation midpoint                                      
+    - Light time correction only, and no stellar aberration, for light        
+      leaving target center and arriving at spacecraft at observation         
+      midpoint.                                                               
+                                                                              
+- SUB_SOLAR_LATITUDE                                                          
+- SUB_SPACECRAFT_LATITUDE                                                     
+  - Same vectors used as for PHASE_ANGLE                                      
+  - IAU convention:                                                           
+    - Positive toward Positive pole                                           
+                                                                              
+- SUB_SOLAR_LONGITUDE                                                         
+- SUB_SPACECRAFT_LONGITUDE                                                    
+  - Same vectors used as for PHASE_ANGLE                                      
+  - IAU convention                                                            
+    - Increasing in right-hand direction with thumb toward pole               
+                                                                              
+- Azimuth to Sun in FOV:                                                      
+  - Projection of PLUTO to Sun vector                                         
+    (same as for PHASE_ANGLE) into instrument FOV                             
+  - Positive clockwise from up                                                
+  - PDS3 provides no suitable keyword, here is a placeholder:                 
+                                                                              
+NEWHORIZONS:SOLAR_FOV_AZIMUTH = 270.1 <DEGREE>                                
+                                                                              
+- TARGET_NAME                                                                 
+  - Note if TARGET_NAME is N/A, these parameters may be undefined.            
+    This can occur, for instance, if an instrument was performing             
+    an internal calibration.                                                  
+                                                                              
+By mutual agreement with PDS-SBN, FITS headers are the domain of the NH       
+Project and were not part of the peer review beyond adherence to the          
+FITS standard.  FITS header values, especially geometric conventions          
+regarding phase angle, direction of supplied vectors and sense of light       
+time and stellar aberration corrections, were chosen to serve                 
+operational purposes and should be used with care.                            
+                                                                              
+- Keyword NEWHORIZONS:APPROX_TARGET_NAME is the best guess of the             
+  intended target of the observation made by the automated data               
+  processing pipeline.                                                        
+                                                                              
+- Keywords NEWHORIZONS:APPROX_TARGET_LINE and                                 
+  NEWHORIZONS:APPROX_TARGET_SAMPLE provide the approximate pixel              
+  position in the image of the center of that best guess target in            
+  one-based absolute units of the PDS keywords LINES and LINE_SAMPLES,        
+  respectively, as defined in the IMAGE OBJECT of this label and in the       
+  PDS Standards Reference.  The origin is dependent on the definitions        
+  of LINE_DISPLAY_DIRECTION and SAMPLE_DISPLAY_DIRECTION; if those are        
+  UP and RIGHT, respectively, then the origin is in the lower left.           
+                                                                              
+- If the best guess at the target is unknown, then all three keywords         
+  will be UNK i.e. unknown. If there was no target, i.e. for some             
+  instances of instrument calibration activities, the keywords will           
+  be N/A.                                                                     
+                                                                              
+                                                                              
+                                                                              
+- This image is not windowed                                                  
+"                                                                             
+                                                                              
+MISSION_NAME         = "NEW HORIZONS"                                         
+DATA_SET_ID          = "NH-P-LORRI-2-PLUTO-V3.0"                              
+PRODUCT_ID           = "LOR_0299167895_0X630_ENG"                             
+PRODUCER_INSTITUTION_NAME = "SOUTHWEST RESEARCH INSTITUTE"                    
+PRODUCT_TYPE         = "EDR"                                                  
+MISSION_PHASE_NAME   = "PLUTO ENCOUNTER"                                      
+NEWHORIZONS:SEQUENCE_ID = "                                                   
+  PELR_P_LORRI"                                                               
+NEWHORIZONS:OBSERVATION_DESC  = "                                             
+  LORRI 4X5 MOSAIC OF PLUTO                                                   
+"                                                                             
+TARGET_NAME          = "PLUTO"                                                
+                                                                              
+PRODUCT_CREATION_TIME = 2017-09-21T00:00:00                                   
+START_TIME           = 2015-07-14T08:19:36.706                                
+STOP_TIME            = 2015-07-14T08:19:36.856                                
+SPACECRAFT_CLOCK_CNT_PARTITION = 3                                            
+SPACECRAFT_CLOCK_START_COUNT   = "0299167894:41500"                           
+SPACECRAFT_CLOCK_STOP_COUNT    = "0299167894:49000"                           
+                                                                              
+INSTRUMENT_NAME="LONG RANGE RECONNAISSANCE IMAGER"                            
+INSTRUMENT_HOST_NAME = "NEW HORIZONS"                                         
+INSTRUMENT_HOST_ID   = "NH"                                                   
+INSTRUMENT_ID        = "LORRI"                                                
+TELEMETRY_APPLICATION_ID = "0x630"                                            
+EXPOSURE_DURATION    = 0.150 <s>                                              
+DETECTOR_TYPE        = "SI CCD"                                               
+INST_CMPRS_TYPE      = "LOSSLESS"                                             
+                                                                              
+                                                                              
+EQUINOX_EPOCH               = 2000.0                                          
+COORDINATE_SYSTEM_ID        = "J2000"                                         
+                                                                              
+SC_TARGET_POSITION_VECTOR = (                                                 
+  -10211.737 <km>                                                             
+, -168778.96 <km>                                                             
+, -37419.454 <km>                                                             
+ )                                                                            
+SC_TARGET_VELOCITY_VECTOR = (                                                 
+  -0.15781152 <km/s>                                                          
+, 13.333833 <km/s>                                                            
+, 3.4595215 <km/s>                                                            
+ )                                                                            
+TARGET_CENTER_DISTANCE      = 173178.61 <km>                                  
+                                                                              
+TARGET_SUN_POSITION_VECTOR = (                                                
+  -1197054443.4790750 <km>                                                    
+, 4443978899.4091320 <km>                                                     
+, 1747633447.3582559 <km>                                                     
+ )                                                                            
+TARGET_SUN_VELOCITY_VECTOR = (                                                
+  -5.3825477 <km/s>                                                           
+, -0.80953148 <km/s>                                                          
+, 1.3944043 <km/s>                                                            
+ )                                                                            
+SOLAR_DISTANCE              = 4923018430.3303089 <km>                         
+                                                                              
+SC_SUN_POSITION_VECTOR = (                                                    
+  -1197115192.0956535 <km>                                                    
+, 4443788352.3439398 <km>                                                     
+, 1747616769.0561318 <km>                                                     
+ )                                                                            
+SC_SUN_VELOCITY_VECTOR = (                                                    
+  -5.5366974 <km/s>                                                           
+, 12.525448 <km/s>                                                            
+, 4.8532339 <km/s>                                                            
+ )                                                                            
+SPACECRAFT_SOLAR_DISTANCE   = 4922855276.6722775 <km>                         
+                                                                              
+SC_EARTH_POSITION_VECTOR = (                                                  
+  -1142121778.3174951 <km>                                                    
+, 4313708385.1914539 <km>                                                     
+, 1691224703.7742805 <km>                                                     
+ )                                                                            
+SC_GEOCENTRIC_DISTANCE      = 4772081640.9230251 <km>                         
+                                                                              
+PHASE_ANGLE                 = 19.6 <DEGREE>                                   
+SOLAR_ELONGATION            = 160.4 <DEGREE>                                  
+                                                                              
+SUB_SOLAR_LATITUDE          = 51.6 <DEGREE>                                   
+SUB_SOLAR_LONGITUDE         = 136.0 <DEGREE>                                  
+                                                                              
+SUB_SPACECRAFT_LATITUDE     = 40.2 <DEGREE>                                   
+SUB_SPACECRAFT_LONGITUDE    = 159.2 <DEGREE>                                  
+                                                                              
+RIGHT_ASCENSION             = 266.5 <DEGREE>                                  
+DECLINATION                 = -12.6 <DEGREE>                                  
+CELESTIAL_NORTH_CLOCK_ANGLE = 207.4 <DEGREE>                                  
+BODY_POLE_CLOCK_ANGLE       = 316.8 <DEGREE>                                  
+                                                                              
+QUATERNION = (                                                                
+  0.6828058372                                                                
+, 0.2459132968                                                                
+, 0.08645318212                                                               
+, 0.6825164368                                                                
+ )                                                                            
+QUATERNION_DESC = "QUAT_AXYZ_J2K_TO_INSTR.ASC"                                
+/* See NOTE keyword above for definition of NEWH*:APPROX_TARGET_* fields */   
+NEWHORIZONS:APPROX_TARGET_NAME   = "PLUTO"                                    
+NEWHORIZONS:APPROX_TARGET_LINE   = 139                                        
+NEWHORIZONS:APPROX_TARGET_SAMPLE = 468                                        
+                                                                              
+SPICE_FILE_NAME      = { "nh_pred_20060119_20070401_od020.bsp"                
+                       , "nh_pred_20060119_20070101_od021.bsp"                
+                       , "nh_pred_20060119_20100601_od022.bsp"                
+                       , "nh_pred_20060119_20100101_od032.bsp"                
+                       , "nh_pred_20061001_20100101_od040.bsp"                
+                       , "nh_pred_20070307_20100101_od041.bsp"                
+                       , "nh_pred_20070321_20100101_od042.bsp"                
+                       , "nh_pred_20070319_20100101_od051.bsp"                
+                       , "nh_pred_20070319_20110101_od059.bsp"                
+                       , "nh_pred_20080710_20160101_od059.bsp"                
+                       , "nh_pred_20070319_20130101_od061.bsp"                
+                       , "nh_pred_20070319_20140101_od064.bsp"                
+                       , "nh_pred_20070319_20150101_od070.bsp"                
+                       , "nh_pred_20070319_20150501_od072.bsp"                
+                       , "nh_pred_20070319_20150901_od077.bsp"                
+                       , "nh_pred_20120501_20160913_od091.bsp"                
+                       , "nh_pred_20150801_20190301_od124.bsp"                
+                       , "nh_pred_20150801_20190901_od126.bsp"                
+                       , "naif0012.tls"                                       
+                       , "new_horizons_1535.tsc"                              
+                       , "nh_stars_kbo_centaur_ppinp.tpc"                     
+                       , "pck00010.tpc"                                       
+                       , "nh_v220.tf"                                         
+                       , "nh_allinstruments_v002.ti"                          
+                       , "nh_alice_v200.ti"                                   
+                       , "nh_lorri_v201.ti"                                   
+                       , "nh_pepssi_v110.ti"                                  
+                       , "nh_ralph_v100.ti"                                   
+                       , "nh_rex_v100.ti"                                     
+                       , "nh_sdc_v101.ti"                                     
+                       , "nh_swap_v200.ti"                                    
+                       , "nh_soc_misc_v001.tf"                                
+                       , "sb_2002jf56_2.bsp"                                  
+                       , "jup260.bsp"                                         
+                       , "kbo_centaur_horizons_20131129.bsp"                  
+                       , "kbo_centaur_20170422.bsp"                           
+                       , "sb_2014mu69_20150903_s6.bsp"                        
+                       , "nh_extras.bsp"                                      
+                       , "nh_stars.bsp"                                       
+                       , "NavPE_de433_od128.bsp"                              
+                       , "NavSE_plu047_od123.bsp"                             
+                       , "nh_nep_ura_000.bsp"                                 
+                       , "nh_recon_e2j_v1.bsp"                                
+                       , "nh_recon_j2sep07_prelimv1.bsp"                      
+                       , "nh_recon_pluto_od122_v01.bsp"                       
+                       , "merged_nhpc_2006_v001.bc"                           
+                       , "merged_nhpc_2007_v001.bc"                           
+                       , "merged_nhpc_2008_v001.bc"                           
+                       , "merged_nhpc_2009_v001.bc"                           
+                       , "merged_nhpc_2010_v001.bc"                           
+                       , "merged_nhpc_2011_v001.bc"                           
+                       , "merged_nhpc_2012_v001.bc"                           
+                       , "merged_nhpc_2013_v001.bc"                           
+                       , "merged_nhpc_2014_v001.bc"                           
+                       , "merged_nhpc_2015_v039.bc"                           
+                       , "merged_nhpc_2016_v003.bc"                           
+                       , "merged_nhpc_2017_01_v011.bc"                        
+                       , "merged_nhpc_2017_02_v004.bc"                        
+                       , "merged_nhpc_2017_03_v004.bc"                        
+                       , "merged_nhpc_2017_04_v004.bc"                        
+                       , "merged_nhpc_2017_09_v011.bc"                        
+                       , "merged_nhpc_2017_10_v010.bc"                        
+                       , "merged_nhpc_2017_11_v004.bc"                        
+                       , "nhpc_2017_335_02.bc"                                
+                       , "nhpc_2017_338_02.bc"                                
+                       , "nhpc_2017_339_04.bc"                                
+                       , "nhpc_2017_340_04.bc"                                
+                       , "nhpc_2017_341_03.bc"                                
+                       , "nhpc_2017_342_03.bc"                                
+                       , "nhpc_2017_343_02.bc"                                
+                       , "nhpc_2017_344_02.bc"                                
+                       , "nhpc_2017_346_01.bc"                                
+                       , "naif0012.tls"                                       
+                       , "pck00010.tpc"                                       
+                       , "nh_stars_kbo_centaur_v002.tpc"                      
+                       , "new_horizons_1454.tsc"                              
+                       , "nh_v220.tf"                                         
+                       , "nh_soc_misc_v002.tf"                                
+                       , "heliospheric_v004u.tf"                              
+                       , "nh_alice_v200.ti"                                   
+                       , "nh_lorri_v201.ti"                                   
+                       , "nh_pepssi_v110.ti"                                  
+                       , "nh_ralph_v100u.ti"                                  
+                       , "nh_rex_v100.ti"                                     
+                       , "nh_sdc_v101.ti"                                     
+                       , "nh_swap_v200.ti"                                    
+                       , "de418.bsp"                                          
+                       , "jup260.bsp"                                         
+                       , "nh_plu017.bsp"                                      
+                       , "kbo_centaur_20170422.bsp"                           
+                       , "kbo_centaur_20131129.bsp"                           
+                       , "nh_extras.bsp"                                      
+                       , "sb_2002jf56_2.bsp"                                  
+                       , "sb_2014mu69_20150903_s6.bsp"                        
+                       , "nh_nep_ura_000.bsp"                                 
+                       , "nh_pred_alleph_od124.bsp"                           
+                       , "nh_recon_e2j_v1.bsp"                                
+                       , "nh_recon_j2sep07_prelimv1.bsp"                      
+                       , "nh_recon_od077_v01.bsp"                             
+                       , "nh_recon_od117_v01.bsp"                             
+                       , "nh_recon_pluto_od122_v01.bsp"                       
+                       , "merged_nhpc_2006_v011.bc"                           
+                       , "merged_nhpc_2007_v006.bc"                           
+                       , "merged_nhpc_2008_v001.bc"                           
+                       , "merged_nhpc_2009_v001.bc"                           
+                       , "merged_nhpc_2010_v001.bc"                           
+                       , "merged_nhpc_2011_v001.bc"                           
+                       , "merged_nhpc_2012_v001.bc"                           
+                       , "merged_nhpc_2013_v001.bc"                           
+                       , "merged_nhpc_2014_v001.bc"                           
+                       , "merged_nhpc_2015_v001.bc"                           
+                       , "merged_nhpc_2016_v003.bc"                           
+                       }                                                      
+                                                                              
+OBJECT                          = HEADER                                      
+  BYTES                           = 25920                                     
+  HEADER_TYPE                     = "FITS"                                    
+  INTERCHANGE_FORMAT              = "BINARY"                                  
+  RECORDS                         = 9                                         
+  DESCRIPTION                     = "                                         
+    FITS format defined in NASA/Science                                       
+    Office Standards Technology 100-1.0                                       
+                                                                              
+By mutual agreement with PDS-SBN, FITS headers are the domain of the NH       
+Project and were not part of the peer review beyond adherence to the          
+FITS standard.  FITS header values, especially geometric conventions          
+regarding phase angle, direction of supplied vectors and sense of light       
+time and stellar aberration corrections, were chosen to serve                 
+operational purposes and should be used with care.                            
+  "                                                                           
+END_OBJECT                      = HEADER                                      
+                                                                              
+OBJECT                          = IMAGE                                       
+  DESCRIPTION                   = "                                           
+    FITS PDU                                                                  
+      PDU                                                                     
+                                                                              
+    Raw image data                                                            
+    - 12-bit values stored in 16-bit integers                                 
+  "                                                                           
+  UNIT                            = "DATA NUMBER"                             
+  SAMPLE_BITS                     = 16                                        
+  SAMPLE_TYPE                     = "MSB_INTEGER"                             
+  AXIS_ORDER_TYPE                 = "FIRST_INDEX_FASTEST"                     
+  LINE_DISPLAY_DIRECTION          = "UP"                                      
+  SAMPLE_DISPLAY_DIRECTION        = "RIGHT"                                   
+  LINE_SAMPLES                    = 1028                                      
+  LINES                           = 1024                                      
+  OFFSET                          = 0.00000000000                             
+  SCALING_FACTOR                  = 1.00000000000                             
+END_OBJECT                      = IMAGE                                       
+                                                                              
+OBJECT                          = EXTENSION_HISTOGRAM_HEADER                  
+  BYTES                           = 2880                                      
+  HEADER_TYPE                     = "FITS"                                    
+  INTERCHANGE_FORMAT              = "BINARY"                                  
+  RECORDS                         = 1                                         
+  DESCRIPTION                     = "                                         
+    This is the FITS header for                                               
+      FITS EDU number:  1                                                     
+      FITS EDU name:                                                          
+        HISTOGRAM                                                             
+  "                                                                           
+END_OBJECT                      = EXTENSION_HISTOGRAM_HEADER                  
+                                                                              
+OBJECT                          = EXTENSION_HISTOGRAM_IMAGE                   
+  DESCRIPTION                   = "                                           
+    FITS EDU number:  1                                                       
+      HISTOGRAM                                                               
+                                                                              
+    Raw image data histogram                                                  
+    - The histogram received in the lowrate telemetry                         
+    - details the number of occurrences of pixels having                      
+      specified pixel intensities. There are 32 histogram                     
+      bins covering an intensity range of 0 to 4095,                          
+      indicating that each bin represents a DN range of 128.                  
+  "                                                                           
+  SAMPLE_BITS                     = 32                                        
+  SAMPLE_TYPE                     = "MSB_INTEGER"                             
+  AXIS_ORDER_TYPE                 = "FIRST_INDEX_FASTEST"                     
+  LINE_DISPLAY_DIRECTION          = "UP"                                      
+  SAMPLE_DISPLAY_DIRECTION        = "RIGHT"                                   
+  LINE_SAMPLES                    = 32                                        
+  LINES                           = 1                                         
+  OFFSET                          = 2147483648.00                             
+  SCALING_FACTOR                  = 1.00000000000                             
+END_OBJECT                      = EXTENSION_HISTOGRAM_IMAGE                   
+                                                                              
+OBJECT                          = EXTENSION_ENCODED_FIRST34_HEADER            
+  BYTES                           = 2880                                      
+  HEADER_TYPE                     = "FITS"                                    
+  INTERCHANGE_FORMAT              = "BINARY"                                  
+  RECORDS                         = 1                                         
+  DESCRIPTION                     = "                                         
+    This is the FITS header for                                               
+      FITS EDU number:  2                                                     
+      FITS EDU name:                                                          
+        IMAGE HEADER                                                          
+  "                                                                           
+END_OBJECT                      = EXTENSION_ENCODED_FIRST34_HEADER            
+                                                                              
+OBJECT                          = EXTENSION_ENCODED_FIRST34_IMAGE             
+  DESCRIPTION                   = "                                           
+    FITS EDU number:  2                                                       
+      IMAGE HEADER                                                            
+                                                                              
+    Encoded image header                                                      
+    - normally overlays first 34 pixels of image                              
+    - Multi-byte quantities are MSByte-first                                  
+    - 51 bytes as follows:                                                    
+                                                                              
+    Count    Possible                                                         
+     x Bits  Values                  Description                              
+                                                                              
+     1 x 32  Unsigned integer        Time tag                                 
+    20 x 16  See below               Analog readings                          
+     1 x 16  0 - 29,967              Exposure time (1 ms)                     
+     1 x 8   0 - 255                 Calibration lamp #2 level                
+     1 x 8   0 - 255                 Calibration lamp #1 level                
+     1 x 8   0                       Spare                                    
+     1 x 1   0 = Disable             Dis-/Enable temperature conversion       
+             1 = Enable                                                       
+     1 x 1   0 = Off                 Calibration lamp #2 power enable         
+             1 = On                                                           
+     1 x 1   0 = Off                 Calibration lamp #1 power enable         
+             1 = On                                                           
+     1 x 3   0 = CCD                 Image source                             
+             1 = FPU test pattern 1                                           
+             2 = FPU test pattern 2                                           
+             3 = DPU test pattern 1                                           
+             4 = DPU test pattern 2                                           
+     1 x 1   0 = 1x1                 Image format                             
+             1 = 4x4                                                          
+     1 x 1   0 = Manual              Exposure mode                            
+             1 = Automatic                                                    
+     1 x 8   0                       Spare                                    
+                                                                              
+    Analog readings (LVPS/0 - /15 & FPU/0 -/3):                               
+     1 x 16  0 - 1023                EPU +5 voltage                           
+     1 x 16  0 - 1023                EPU +5 current                           
+     1 x 16  0 - 1023                FPU +15 voltage                          
+     1 x 16  0 - 1023                FPU +15 current                          
+     1 x 16  0 - 1023                FPU +6 voltage                           
+     1 x 16  0 - 1023                FPU +6 current                           
+     1 x 16  0 - 1023                FPU heater current                       
+     1 x 16  0 - 1023                EPU +2.5 voltage                         
+     1 x 16  0 - 1023                Intermediate ring temperature            
+     1 x 16  0 - 1023                Mounting foot-top temperature            
+     1 x 16  0 - 1023                M2 mirror mount temperature              
+     1 x 16  0 - 1023                Radiator temperature                     
+     1 x 16  0 - 1023                Baffle-aft temperature                   
+     1 x 16  0 - 1023                Baffle-forward temperature               
+     1 x 16  0 - 1023                M1 mirror support temperature            
+     1 x 16  0 - 1023                M1 mirror temperature                    
+     1 x 16  0 - 4095                CCD temperature                          
+     1 x 16  0 - 65535               M1 V/F temperature                       
+     1 x 16  0 - 65535               M2 V/F temperature                       
+     1 x 16  0 - 65535               FPU board V/F temperature                
+  "                                                                           
+  SAMPLE_BITS                     = 8                                         
+  SAMPLE_TYPE                     = "MSB_UNSIGNED_INTEGER"                    
+  AXIS_ORDER_TYPE                 = "FIRST_INDEX_FASTEST"                     
+  LINE_DISPLAY_DIRECTION          = "UP"                                      
+  SAMPLE_DISPLAY_DIRECTION        = "RIGHT"                                   
+  LINE_SAMPLES                    = 51                                        
+  LINES                           = 1                                         
+END_OBJECT                      = EXTENSION_ENCODED_FIRST34_IMAGE             
+                                                                              
+OBJECT                          = EXTENSION_IMAGE_DESCRIPTOR_HEADER           
+  BYTES                           = 2880                                      
+  HEADER_TYPE                     = "FITS"                                    
+  INTERCHANGE_FORMAT              = "BINARY"                                  
+  RECORDS                         = 1                                         
+  DESCRIPTION                     = "                                         
+    This is the FITS header for                                               
+      FITS EDU number:  3                                                     
+      FITS EDU name:                                                          
+        IMAGE DESCRIPTOR                                                      
+  "                                                                           
+END_OBJECT                      = EXTENSION_IMAGE_DESCRIPTOR_HEADER           
+                                                                              
+OBJECT                          = EXTENSION_IMAGE_DESCRIPTOR_IMAGE            
+  DESCRIPTION                   = "                                           
+    FITS EDU number:  3                                                       
+      IMAGE DESCRIPTOR                                                        
+                                                                              
+    Image descriptor                                                          
+    - Multi-byte quantities are MSByte-first                                  
+    - 174 bytes as follows:                                                   
+                                                                              
+    Count    Possible                                                         
+     x Bits  Values                  Description                              
+                                                                              
+    20 x 16  See below               Analog readings                          
+     1 x 16  0 - 29,967              Exposure time (1 ms)                     
+     1 x 8   0 - 255                 Calibration lamp #2 level                
+     1 x 8   0 - 255                 Calibration lamp #1 level                
+     1 x 8   0                       Spare                                    
+     1 x 1   0 = Disable             Dis-/Enable temperature conversion       
+             1 = Enable                                                       
+     1 x 1   0 = Off                 Calibration lamp #2 power enable         
+             1 = On                                                           
+     1 x 1   0 = Of                  Calibration lamp #1 power enablef        
+             1 = On                                                           
+     1 x 3   0 = CCD                 Image source                             
+             1 = FPU test pattern 1                                           
+             2 = FPU test pattern 2                                           
+             3 = DPU test pattern 1                                           
+             4 = DPU test pattern 2                                           
+     1 x 1   0 = 1x1                 Image format                             
+             1 = 4x4                                                          
+     1 x 1   0 = Manual              Exposure mode                            
+             1 = Automatic                                                    
+    32 x 32  Unsigned integer        Image histogram                          
+                                                                              
+    Analog readings (LVPS/0 - /15 & FPU/0 -/3):                               
+     1 x 16  0 - 1023                EPU +5 voltage                           
+     1 x 16  0 - 1023                EPU +5 current                           
+     1 x 16  0 - 1023                FPU +15 voltage                          
+     1 x 16  0 - 1023                FPU +15 current                          
+     1 x 16  0 - 1023                FPU +6 voltage                           
+     1 x 16  0 - 1023                FPU +6 current                           
+     1 x 16  0 - 1023                FPU heater current                       
+     1 x 16  0 - 1023                EPU +2.5 voltage                         
+     1 x 16  0 - 1023                Intermediate ring temperature            
+     1 x 16  0 - 1023                Mounting foot-top temperature            
+     1 x 16  0 - 1023                M2 mirror mount temperature              
+     1 x 16  0 - 1023                Radiator temperature                     
+     1 x 16  0 - 1023                Baffle-aft temperature                   
+     1 x 16  0 - 1023                Baffle-forward temperature               
+     1 x 16  0 - 1023                M1 mirror support temperature            
+     1 x 16  0 - 1023                M1 mirror temperature                    
+     1 x 16  0 - 4095                CCD temperature                          
+     1 x 16  0 - 65535               M1 V/F temperature                       
+     1 x 16  0 - 65535               M2 V/F temperature                       
+     1 x 16  0 - 65535               FPU board V/F temperature                
+  "                                                                           
+  SAMPLE_BITS                     = 8                                         
+  SAMPLE_TYPE                     = "MSB_UNSIGNED_INTEGER"                    
+  AXIS_ORDER_TYPE                 = "FIRST_INDEX_FASTEST"                     
+  LINE_DISPLAY_DIRECTION          = "UP"                                      
+  SAMPLE_DISPLAY_DIRECTION        = "RIGHT"                                   
+  LINE_SAMPLES                    = 174                                       
+  LINES                           = 1                                         
+END_OBJECT                      = EXTENSION_IMAGE_DESCRIPTOR_IMAGE            
+                                                                              
+OBJECT                          = EXTENSION_WINDOW_MISMATCHES_HEADER          
+  BYTES                           = 2880                                      
+  HEADER_TYPE                     = "FITS"                                    
+  INTERCHANGE_FORMAT              = "BINARY"                                  
+  RECORDS                         = 1                                         
+  DESCRIPTION                     = "                                         
+    This is the FITS header for                                               
+      FITS EDU number:  4                                                     
+      FITS EDU name:                                                          
+        WINDOW_MISMATCHES                                                     
+  "                                                                           
+END_OBJECT                      = EXTENSION_WINDOW_MISMATCHES_HEADER          
+                                                                              
+OBJECT                          = EXTENSION_WINDOW_MISMATCHES_TABLE           
+  INTERCHANGE_FORMAT              = "BINARY"                                  
+  ROW_BYTES                       = 57                                        
+  ROWS                            = 1                                         
+  COLUMNS                         = 10                                        
+  DESCRIPTION                     = "                                         
+    FITS EDU number:  4                                                       
+    FITS EDU name:                                                            
+      WINDOW_MISMATCHES                                                       
+                                                                              
+     New Horizons sub-frame WINdow SUMMary                                    
+                                                                              
+     Background:  The New Horizons (NH) Spacecraft saves high-speed instrument
+     data in the on-board Solid State Recorder (SSR).  High-speed data are    
+     never telemetered to Earth, but instead either are packetized without    
+     compression, or are compressed using either a lossless or lossy algorithm
+     into low-speed data.  Low-speed data can be scheduled to be telemetered  
+     back to Earth.  When that telemetry reaches a Science Operations Center  
+     (SOC), they are decommutated and converted back into a data format       
+     suitable for the original instrument and detector.  For some imaging     
+     instruments (LORRI and RALPH/LEISA and RALPH/MVIC), LOSSLESS data may be 
+     sub-framed i.e. a rectangular window that is a subset of the complete    
+     observation is compressed and telemetered to Earth.  For each single     
+     observation, up to eight independent sub-frames (a.k.a.  windows) may be 
+     defined.  The pipeline processes each window independently, because each 
+     one comes in a single packet set, producing one FITS file per window.  A 
+     packet set is a sequence of packets:  a start packet; zero or more       
+     intermediate packets; a stop packet.  An alternate packet set is a single
+     packet that is both a start and stop packet.  Before March, 2015, each   
+     window ended up in a separate FITS file; so only one set of windowing    
+     parameters was needed in the FITS header to keep track of the original   
+     compression settings.                                                    
+                                                                              
+     As of March, 2015, the pipeline started to merge each window (packet set)
+     with previously processed windows from the same observation.  The        
+     implementation keeps a running history of the merge process in a BINTABLE
+     in the FITS file.  The history contains three items:                     
+                                                                              
+     1) the merged data                                                       
+     1.1) non-missing values in new data overwrite old data                   
+     2) a history of data keys in the PDU header                              
+     3) history mismatches detected when merging data, as a BINTABLE with     
+            EXTNAME = 'WINDOWS_MISMATCHES'                                    
+     3.1) the location of each mismatch                                       
+     3.2) the numerical difference of each mismatch, new-old                  
+     3.3) the data key of each mismatch (from the new data)                   
+                                                                              
+     Each data key comprises seven items, normally stored in each FITS PDU    
+     header using the following keywords:                                     
+                                                                              
+       WINDOWX  - Integer, left-edge offset to sub-frame, compr. params X_1   
+                           through X_8                                        
+       WINDOWY  - Integer, bottom-edge offset to sub-frame, compr. params Y_1 
+                           through Y_8                                        
+       WINDOWW  - Integer, sub-frame width, compr. params X1_len through      
+                           X8_len                                             
+       WINDOWH  - Integer, sub-frame height, compr. params Y1_len through     
+                           Y8_len                                             
+       APID     - String, Application Process IDentifier (e.g. '0x630')       
+       GRT      - Float, Ground-Received Time of packet(s)                    
+       ARCHDATE - String, packet telemetry filename,                          
+                          e.g. '2008/290/2008290.tlm'                         
+                                                                              
+     The data key history, for each packet, set is stored as FITS keywords, in
+     the PDU header, similar to the following:                                
+                                                                              
+       WINX_000 - Original WINDOWX value                                      
+       WINY_000 - Original WINDOWY value                                      
+       WINW_000 - Original WINDOWW value                                      
+       WINH_000 - Original WINDOWH value                                      
+       APID_000 - Original APID value                                         
+       GRT__000 - Original GRT value                                          
+       ARCH_000 - Original ARCHDATE value                                     
+                                                                              
+       - the common _000 suffix indicates these values all came from the same 
+         packet set.  Later suffixes (_001, _002, _003, etc.) indicate        
+         separate packet sets.                                                
+                                                                              
+       - N.B duplicate data keys are removed; that is, each data key will     
+             appear only once in the header                                   
+                                                                              
+       - N.B the _nnn suffix does NOT indicate the order in which the packets 
+         sets were processed; rather the sub-frame parameters are sorted, and 
+         re-sorted each time a new packet set is merged with the data from    
+         previous packet sets.                                                
+                                                                              
+     In addition to the summary history in the PDU FITS header, the merging   
+     implementation creates a BINTABLE FITS eXTENSION of the history of the   
+     window processing, plus the locations of any mismatches in the pixel     
+     values loaded.  Each window added to the data will generate at least one 
+     entry (row) in the table, with a location using -999 as the offsets and  
+     zero as the delta.  There will be ten or eleven columns for 2D or 3D data
+     respectively:                                                            
+                                                                              
+       MMNAXIS1OFFSET   offset along NAXIS1 of data                           
+       MMNAXIS2OFFSET   offset along NAXIS2 of data                           
+       MMNAXIS3OFFSET   offset along NAXIS3 of data (for 3D data only)        
+       DELTA            delta from current pixel value to pixel being merged  
+       WINDOWX          Window parameter from data being merged               
+       WINDOWY          Window parameter from data being merged               
+       WINDOWW          Window parameter from data being merged               
+       WINDOWH          Window parameter from data being merged               
+       APID             Window parameter from data being merged               
+       GRT              Window parameter from data being merged               
+       ARCHDATE         Window parameter from data being merged               
+                                                                              
+       N.B. Each merged window will have at least one entry with the OFFSETs  
+            set to -999 and DELTA set to zero.  Note that such entries are a  
+            superset of the data key list in the PDU header, and that these   
+            entries with -999 as the offsets do not indicate any anomalies in 
+            the merge process, and most if not all files will have multiple   
+            entries with the -999 values.                                     
+                                                                              
+  "                                                                           
+                                                                              
+  OBJECT        = COLUMN                                                      
+    NAME          = "MMNAXIS1OFFSET"                                          
+    BYTES         = 4                                                         
+    COLUMN_NUMBER = 1                                                         
+    DATA_TYPE     = "MSB_INTEGER"                                             
+    START_BYTE    = 1                                                         
+    DESCRIPTION   = "                                                         
+            Offset of location of pixel mismatch                              
+            along NAXIS1 (LINE_SAMPLES) of data                               
+            N.B. will be -999 for row that has provenance                     
+    "                                                                         
+    UNIT          = "PIXEL"                                                   
+  END_OBJECT    = COLUMN                                                      
+  OBJECT        = COLUMN                                                      
+    NAME          = "MMNAXIS2OFFSET"                                          
+    BYTES         = 4                                                         
+    COLUMN_NUMBER = 2                                                         
+    DATA_TYPE     = "MSB_INTEGER"                                             
+    START_BYTE    = 5                                                         
+    DESCRIPTION   = "                                                         
+            Offset of location of pixel mismatch                              
+            along NAXIS2 (LINES) of data                                      
+            N.B. will be -999 for row that has provenance only.               
+    "                                                                         
+    UNIT          = "PIXEL"                                                   
+  END_OBJECT    = COLUMN                                                      
+  OBJECT        = COLUMN                                                      
+    NAME          = "DELTA"                                                   
+    BYTES         = 4                                                         
+    COLUMN_NUMBER = 3                                                         
+    DATA_TYPE     = "MSB_INTEGER"                                             
+    START_BYTE    = 9                                                         
+    DESCRIPTION   = "                                                         
+            The offset of the pixel value mismatch, from the                  
+            previous pixel value to the replacement pixel                     
+            value.                                                            
+            N.B. will be zero for row that has provenance only.               
+    "                                                                         
+    UNIT          = "DATA NUMBER"                                             
+  END_OBJECT    = COLUMN                                                      
+  OBJECT        = COLUMN                                                      
+    NAME          = "WINDOWX"                                                 
+    BYTES         = 4                                                         
+    COLUMN_NUMBER = 4                                                         
+    DATA_TYPE     = "MSB_INTEGER"                                             
+    START_BYTE    = 13                                                        
+    DESCRIPTION   = "                                                         
+            NAXIS1 (LINE_SAMPLES) pixel offset to merged                      
+            window.                                                           
+            Describes the location of the merged window.                      
+            One of compression parameters X_1 to X_8.                         
+            First parameter of the merged indow key.                          
+    "                                                                         
+    UNIT          = "PIXEL"                                                   
+  END_OBJECT    = COLUMN                                                      
+  OBJECT        = COLUMN                                                      
+    NAME          = "WINDOWY"                                                 
+    BYTES         = 4                                                         
+    COLUMN_NUMBER = 5                                                         
+    DATA_TYPE     = "MSB_INTEGER"                                             
+    START_BYTE    = 17                                                        
+    DESCRIPTION   = "                                                         
+            NAXIS2 (LINES) pixel offset to merged window.                     
+            Describes the location of the merged                              
+            window.                                                           
+            One of compression parameters Y_1 to Y_8.                         
+            Second parameter of the merged indow key.                         
+    "                                                                         
+    UNIT          = "PIXEL"                                                   
+  END_OBJECT    = COLUMN                                                      
+  OBJECT        = COLUMN                                                      
+    NAME          = "WINDOWW"                                                 
+    BYTES         = 4                                                         
+    COLUMN_NUMBER = 6                                                         
+    DATA_TYPE     = "MSB_INTEGER"                                             
+    START_BYTE    = 21                                                        
+    DESCRIPTION   = "                                                         
+            NAXIS1 (LINE_SAMPLES) pixel width of merged                       
+            window.                                                           
+            Describes the size of the merged window.                          
+            One of compression parameters X1_len to X8_len.                   
+            Third parameter of the merged window key.                         
+    "                                                                         
+    UNIT          = "PIXEL"                                                   
+  END_OBJECT    = COLUMN                                                      
+  OBJECT        = COLUMN                                                      
+    NAME          = "WINDOWH"                                                 
+    BYTES         = 4                                                         
+    COLUMN_NUMBER = 7                                                         
+    DATA_TYPE     = "MSB_INTEGER"                                             
+    START_BYTE    = 25                                                        
+    DESCRIPTION   = "                                                         
+            NAXIS2 (LINES) height pixel of merged window.                     
+            Describes the size of the merged window.                          
+            One of compression parameters Y1_len to Y8_len.                   
+            Fourth parameter of the merged window key.                        
+    "                                                                         
+    UNIT          = "PIXEL"                                                   
+  END_OBJECT    = COLUMN                                                      
+  OBJECT        = COLUMN                                                      
+    NAME          = "APID"                                                    
+    BYTES         = 5                                                         
+    COLUMN_NUMBER = 8                                                         
+    DATA_TYPE     = "CHARACTER"                                               
+    START_BYTE    = 29                                                        
+    DESCRIPTION   = "                                                         
+            Application Process ID of packets                                 
+            that were combined to create the                                  
+            merged window, in hexadecimal form e.g. 0x53f                     
+            Fifth parameter of the merged window key.                         
+    "                                                                         
+  END_OBJECT    = COLUMN                                                      
+  OBJECT        = COLUMN                                                      
+    NAME          = "GRT"                                                     
+    BYTES         = 4                                                         
+    COLUMN_NUMBER = 9                                                         
+    DATA_TYPE     = "IEEE_REAL"                                               
+    START_BYTE    = 34                                                        
+    DESCRIPTION   = "                                                         
+            Ground Receipt time of first packet                               
+            of those combined to create the                                   
+            merged window.                                                    
+            The value is only used here as part                               
+            of the merged window key, but its meaning                         
+            is roughly the number of fractional                               
+            days since 1958-01-01T12:00:00.                                   
+            Sixth parameter of the merged window key.                         
+    "                                                                         
+    UNIT          = "DAY"                                                     
+  END_OBJECT    = COLUMN                                                      
+  OBJECT        = COLUMN                                                      
+    NAME          = "ARCHDATE"                                                
+    BYTES         = 20                                                        
+    COLUMN_NUMBER = 10                                                        
+    DATA_TYPE     = "CHARACTER"                                               
+    START_BYTE    = 38                                                        
+    DESCRIPTION   = "                                                         
+            Date of the archive telementry file that                          
+            contained  the first packet of those combined                     
+            to create the merged window.                                      
+            The value is only used here as part                               
+            of the merged window key, but its meaning                         
+            is a combination of year and dsy of year,                         
+            e.g. 2015/064.  Related to the filename                           
+            of the actual telemetry fileh filename.                           
+            Seventh parameter of the merged window key.                       
+    "                                                                         
+  END_OBJECT    = COLUMN                                                      
+END_OBJECT                      = EXTENSION_WINDOW_MISMATCHES_TABLE           
+END                                                                           

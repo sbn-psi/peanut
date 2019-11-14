@@ -1,0 +1,11 @@
+# Configuration file for batch processing NH images
+# This is for NH Pluto
+# Initially created in 26 Aug 2012 by Eric E. Palmer
+# Modified 21 Feb 2015 by Eric E. Palmer
+# Modified 19 Jan 2019 by Beatrice Mueller for NH
+
+phase=Encounter      # Options:  Various
+camera=LORRI           # Options:  LORRI or MVIC
+sequence=2015-07-14   # Date
+level=calibrated
+name=$phase-$sequence # Used for PR items, allows for non-technical descriptors
