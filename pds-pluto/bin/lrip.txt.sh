@@ -11,7 +11,7 @@ txtList=`ls *.txt`
 
 for full in $txtList
 do
-    /usr/bin/awk -f ../../../processing/lrip.txt.awk $full >> ../../meta.txt.sql
+    /usr/bin/awk -f ../../../bin/lrip.txt.awk $full >> ../../meta.txt.sql
 done
 
     sed 's/\(\.[0-9]\)[0-9]*/\1/g' ../../meta.txt.sql > ../../meta.txt.small.sql

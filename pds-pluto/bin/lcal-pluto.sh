@@ -6,7 +6,7 @@ echo "LORRI Calib $p" >> ../cal.log
 
 
 ############ Do all setup ###########
-source /dsk2/PDS/pds-pluto/processing/setup.sh
+source /dsk2/PDS/pds-pluto/bin/setup.sh
 
 cnt=0
 ############ Run the loop ###########

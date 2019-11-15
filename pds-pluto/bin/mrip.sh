@@ -7,7 +7,7 @@
 
 ############ Do all setup ###########
 echo "1: gPath $gPath" 
-source ../processing/lsetup.sh
+source ../bin/lsetup.sh
 echo "2: gPath $gPath"
 
 p=`pwd`
@@ -71,7 +71,7 @@ do
 	cd $p
 
 	echo "  -------- Awk'n"
-	/usr/bin/awk -f ../processing/lrip.awk -v  sequence=$sequence -v phase=$phase -v level=$level -v camera=$camera $root.cub >> $p/meta.sql
+	/usr/bin/awk -f ../bin/lrip.awk -v  sequence=$sequence -v phase=$phase -v level=$level -v camera=$camera $root.cub >> $p/meta.sql
 	rm $root.cub
 
 	# Footprints & Camera Info
@@ -86,7 +86,7 @@ do
 	blobdump from=$root.cub to=$p/t_out.txt name=Footprint type=Polygon
 	strings $p/t_out.txt | grep POLY > $p/t_poly.txt
 	ply=`cat $p/t_poly.txt`
-	/usr/bin/awk -f ../processing/foot.awk -v ply="$ply" $root.cub >> $p/foot.sql
+	/usr/bin/awk -f ../bin/foot.awk -v ply="$ply" $root.cub >> $p/foot.sql
 	
 	rm $p/t_out.txt $p/t_poly.txt
 	caminfo from=$root.cub to=$p/frame/info-$root.txt
@@ -127,11 +127,12 @@ echo "4: gPath $gPath"
 
 echo "-------- obsType"
 # Extract values from FITS files
-../processing/lrip.fits.sh &> lrip.fits.log
+../bin/mrip.fits.sh  &> mrip.fits.log
+../bin/mrip.fits2.sh &> mrip.fits.log
 
 echo "-------- ANGLES: incidence / phase / emission"
 # Extract values from TXT files
-../processing/lrip.txt.sh &> lrip.txt.log
+../bin/lrip.txt.sh &> mrip.txt.log
 
 echo "-------- Done"
 echo "Ending Rip $p" >> ../cal.log

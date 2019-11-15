@@ -5,7 +5,7 @@
 To run the process as a background task, run the following command from a LORRI data directory.
 
 ```bash
-$ nohup ../processing/lrip.sh > log2 2>&1 &
+$ nohup ../bin/lrip.sh > log2 2>&1 &
 ```
 
 You should expect to see the following 4 files after the above command is finished running
